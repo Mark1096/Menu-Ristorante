@@ -17,15 +17,11 @@ export default class MenuComponent extends React.Component {
   } 
 
   render() {
-
     var {ingredients} = this.props.data;
-
-    var list = this._addSpace(ingredients);
-  
+    var list = this._addSpace(ingredients); 
     return(  
       <ScrollView>
-        <View style={styles.container}>
-        
+        <View style={styles.container}>   
           <View style={{flex:2}}>
             <Text style={{fontSize: 18}}> {this.props.data.name} </Text>
             <Text numberOfLines={2} style={{fontSize: 15, color: "gray"}}> {list} </Text>
@@ -34,7 +30,6 @@ export default class MenuComponent extends React.Component {
           <View style={{flex:1, alignItems: "flex-end"}}>
             <Image source={{uri:this.props.data.image}} style={styles.image} /> 
           </View>
-          
         </View> 
       </ScrollView>
     )

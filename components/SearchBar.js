@@ -10,20 +10,28 @@ export default class SearchBar extends React.Component {
     _save = input => {
         this.setState({text: input});
     }
-
+/*   da sistemare
+    componentDidMount() {
+        console.log("dentro componentDidMount SearchBar");
+        var input = this.props.data;
+        if(!input) {
+            console.log("sono dentro l'if di SearchBar");
+            this.setState({text: ""});
+        }
+    }
+*/
     render() {
         return(
         <View style={styles.searchBar} >
             <TextInput style={styles.searchText}
                 underlineColorAndroid="transparent"
-                placeholder="Cerca nel menù per nome o categoria"
+                placeholder="Cerca nel menu per nome o categoria"
                 onChangeText={this._save}
                 onSubmitEditing={ () => this.props.onSubmit(this.state.text)}
             />
         </View>
         )
     }
-
 }
 
 const styles = StyleSheet.create({
@@ -41,4 +49,4 @@ const styles = StyleSheet.create({
     searchText: {
       fontSize: 20,
     }
-  })
+})
